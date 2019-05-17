@@ -16,6 +16,16 @@ npm install -g parcel-bundler
 yarn global add parcel-bundler
 ```
 
+4. Install dependencies
+
+```bash
+npm install
+
+#or
+
+yarn install
+```
+
 # Chạy project
 
 ```bash
@@ -25,5 +35,3 @@ npm run start
 
 yarn start
 ```
-
-* Parcel sẽ tự install node_modules
