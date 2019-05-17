@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ZaloPay Demo</title>
+  <link rel="stylesheet" href="styles/styles.scss" />
+  <link rel="stylesheet" href="styles/simplePagination.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand" href="/">
+      <img src="images/logo-zalopay.svg" alt="Logo ZaloPay" />
+    </a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Trang chủ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-primary" href="/history.html">Lịch sử</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid mt-5">
+    <table id="historyTable" class="table table-hover">
+      <thead>
+        <tr>
+          <th>Apptransid</th>
+          <th>Zptransid</th>
+          <th>Kênh thanh toán</th>
+          <th>Mô tả</th>
+          <th>Thời gian</th>
+          <th>Số tiền</th>
+          <th>Tùy chọn</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <nav id="pagination" class="d-flex justify-content-center my-4"></nav>
+  </div>
+
+  <form class="modal fade" id="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Hoàn tiền giao dịch</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="description">Lý do hoàn tiền</label>
+            <textarea type="text" class="form-control" id="description" placeholder="Nhập lý do hoàn tiền"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="amount">Số tiền</label>
+            <input type="number" class="form-control" id="amount" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
+          <button type="submit" class="btn btn-primary">Hoàn tiền</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <script src="js/app.js"></script>
+  <script src="js/history.js"></script>
+</body>
+</html>
