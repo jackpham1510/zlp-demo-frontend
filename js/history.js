@@ -32,15 +32,15 @@ $modal.submit(function (e) {
 
 function renderRow(row) {
   const $row = $(`
-    <tr id="${row.Zptransid}">
-      <td width="300">${row.Apptransid}</td>
-      <td width="150">${row.Zptransid}</td>
-      <td width="200">${row.Channel}</td>
-      <td>${row.Description}</td>
-      <td width="200">${new Date(row.Timestamp).toLocaleString()}</td>
-      <td width="100">${row.Amount}</td>
+    <tr id="${row.zptransid}">
+      <td width="300">${row.apptransid}</td>
+      <td width="150">${row.zptransid}</td>
+      <td width="200">${row.channel}</td>
+      <td>${row.description}</td>
+      <td width="200">${new Date(row.timestamp).toLocaleString()}</td>
+      <td width="100">${row.amount}</td>
       <td width="150">
-        <button class="btn btn-primary refund" data-zptransid="${row.Zptransid}" data-max-amount="${row.Amount}">Hoàn tiền</button><br/>
+        <button class="btn btn-primary refund" data-zptransid="${row.zptransid}" data-max-amount="${row.amount}">Hoàn tiền</button><br/>
         <button class="btn btn-primary d-none getrefundstatus mt-2">GetRefundStatus</button>
       </td>
     </tr>
@@ -62,9 +62,9 @@ function renderRow(row) {
 
 function renderPagination(data) {
   $('#pagination').pagination({
-    items: data.TotalOrder,
-    itemsOnPage: data.OrderPerPage,
-    currentPage: data.CurrentPage,
+    items: data.totalOrder,
+    itemsOnPage: data.orderPerPage,
+    currentPage: data.currentPage,
     cssStyle: 'light-theme',
     nextText: '>>',
     prevText: '<<',
@@ -82,7 +82,7 @@ $.getJSON(APIs.GETHISTORY + '?page=' + page)
 .done(data => {
   renderPagination(data);
   const $tbody = $('#historyTable tbody')
-  data.Orders.forEach(order => {
+  data.orders.forEach(order => {
     $tbody.append(renderRow(order));
   });
 })
