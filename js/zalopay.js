@@ -25,7 +25,6 @@ export class ZaloPay {
   
   static qr(data, done) {
     ZaloPay.pay(APIs.QR, data, res => {
-      res = JSON.parse(res);
       if (res.returncode === 1) {
         done(res);
       } else {
@@ -42,7 +41,6 @@ export class ZaloPay {
 
   static quickPay(data, done) {
     ZaloPay.pay(APIs.QUICKPAY, data, res => {
-      res = JSON.parse(res);
       if (res.returncode >= 1) {
         if (res.returncode == 1) {
           alert('Thanh toán thành công');
@@ -78,7 +76,6 @@ export class ZaloPay {
   static refund(data, done) {
     return postJSON(APIs.REFUND, data, 
       res => {
-        res = JSON.parse(res);
         alert(parseResult(res));
         done(res);
       }, 

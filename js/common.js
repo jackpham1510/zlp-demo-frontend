@@ -27,7 +27,14 @@ export function postJSON(url, data = {}, done, fail) {
     method: 'POST',
     contentType: 'application/json'
   })
-  .done(done)
+  .done(res => {
+    try {
+      res = JSON.parse(res);
+      done(res);
+    } catch {
+      done(res);
+    }
+  })
   .fail(fail);
 }
 
