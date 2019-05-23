@@ -35,3 +35,13 @@ npm run start
 
 yarn start
 ```
+
+# Đổi config
+
+Đổi host + port trong file [js/common.js](./js/common.js)
+
+```js
+export const HOST = "<new-host:port>";
+
+...
+```
